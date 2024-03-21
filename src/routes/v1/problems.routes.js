@@ -4,7 +4,7 @@ const { problemController } = require('../../controllers');
 
 const problemRouter = express.Router();
 
-// If any request comes and route continues with /ping, we map it to pingProblemController
+// If any request comes and route continues with /ping, we map it to pingController
 problemRouter.get('/ping', problemController.pingController);
 
 problemRouter.get('/:id', problemController.getproblem);
@@ -18,4 +18,4 @@ problemRouter.delete('/:id', problemController.deleteproblem);
 problemRouter.put('/:id', problemController.updateproblem);
 
 
-module.exports = problemRouter; 
+module.exports = problemRouter;
