@@ -1,44 +1,61 @@
 const { StatusCodes } = require('http-status-codes');
+const NotImplemented = require('../errors/notImplemented.error');
+const BadRequest = require('../errors/badRequest.error');
 
-function pingController(req, res) {
-    res.send({ msg: "Ping controller checked" });
+function pingProblemController(req, res) {
+    return res.json({ message: 'Problem controller is up' });
 }
 
-function addproblem(req, res) {
-    return res.status(StatusCodes.NOT_IMPLEMENTED).json({
-        message: 'Not implemented'
-    });
+function addProblem(req, res, next) {
+    try {
+        // nothing implemented
+        throw new NotImplemented('add Problem');
+    } catch (error) {
+        next(error);
+    }
 }
 
-function getproblem(req, res) {
-    return res.status(StatusCodes.NOT_IMPLEMENTED).json({
-        message: 'Not implemented'
-    });
+function getProblem(req, res, next) {
+    try {
+        // nothing implemented
+        throw new NotImplemented('Add Problem');
+    } catch (error) {
+        next(error);
+    }
 }
 
-function getproblems(req, res) {
-    return res.status(StatusCodes.NOT_IMPLEMENTED).json({
-        message: 'Not implemented'
-    });
+function getProblems(req, res, next) {
+    try {
+        // nothing implemented
+        throw new NotImplemented('Add Problem');
+    } catch (error) {
+        next(error);
+    }
 }
 
-function deleteproblem(req, res) {
-    return res.status(StatusCodes.NOT_IMPLEMENTED).json({
-        message: 'Not implemented'
-    });
+function deleteProblem(req, res, next) {
+    try {
+        // nothing implemented
+        throw new NotImplemented('Add Problem');
+    } catch (error) {
+        next(error);
+    }
 }
 
-function updateproblem(req, res) {
-    return res.status(StatusCodes.NOT_IMPLEMENTED).json({
-        message: 'Not implemented'
-    });
+function updateProblem(req, res, next) {
+    try {
+        // nothing implemented
+        throw new NotImplemented('add Problem');
+    } catch (error) {
+        next(error);
+    }
 }
 
 module.exports = {
-    addproblem,
-    getproblem,
-    getproblems,
-    deleteproblem,
-    updateproblem,
-    pingController
+    addProblem,
+    getProblem,
+    getProblems,
+    deleteProblem,
+    updateProblem,
+    pingProblemController
 }
