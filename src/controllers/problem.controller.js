@@ -23,11 +23,15 @@ async function addProblem(req, res, next) {
     }
 }
 
-
-function getProblem(req, res, next) {
+async function getProblem(req, res, next) {
     try {
-        // nothing implemented
-        throw new NotImplemented('Add Problem');
+        const getProblem = await problemService.getProblem(req.params.id)
+        return res.status(StatusCodes.OK).json({
+            success: true,
+            message: 'Successfully fetched the problem',
+            error: {},
+            data: getProblem
+        })
     } catch (error) {
         next(error);
     }
