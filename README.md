@@ -20,7 +20,7 @@ cd LeetCode-Problem-Service && npm install
 3. Create a new .env file in the root directory and set the following env variables
 
 ```
-PORT=3000
+PORT=4000
 ```
 
 4. Start the backend server
