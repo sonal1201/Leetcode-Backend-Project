@@ -22,7 +22,7 @@ allowedTransport.push(new winston.transports.MongoDB({
     collection: 'logs'
 }))
 
-//Logging on the Mongo-db database. 
+//Logging on the file. 
 allowedTransport.push(new winston.transports.File({
     filename: `app.log`
 }))
